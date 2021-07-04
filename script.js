@@ -11,11 +11,12 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
     displayCocktail(data)
   })
   .catch((error) => console.error("FETCH ERROR:", error));
-
+...
 function displayCocktail(data) {
   const cocktail = data.drinks[0];
   const cocktailDiv = document.getElementById("cocktail");
-  }   
+  }
+...
   
    ...
   const cocktailName = cocktail.strDrink;
