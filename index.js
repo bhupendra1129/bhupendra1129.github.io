@@ -1,16 +1,13 @@
-<script>
-
-$(document).ready(function(){
-
-   $.ajax({
-            url: "http://https://rickandmortyapi.com/api/character/",
-            type: 'GET',
-            dataType: 'json',
-            success: function(res) {
-               $('#result').html(res)
-            }
-        });
-
-})
-
-</script>
+fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
+  .then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("NETWORK RESPONSE ERROR");
+    }
+  })
+  .then(data => {
+    console.log(data);
+    displayCocktail(data)
+  })
+  .catch((error) => console.error("FETCH ERROR:", error));
