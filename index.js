@@ -1,13 +1,16 @@
-fetch(‘https://rickandmortyapi.com/api/character/’)
-   .then(response => response.json())
-   .then(characters => showCharacters(characters.results));
+<script>
 
-showCharacters = characters => {
-  const charactersDiv = document.querySelector(‘rick-and-morty-  characters’);
-  characters.forEach(character => {
-    const characterElement = document.createElement(‘p’);
-    characterElement.innerText = `Character Name: ${character.name}`;
-    charactersDiv.append(characterElement);
-  });
-}
+$(document).ready(function(){
 
+   $.ajax({
+            url: "http://https://rickandmortyapi.com/api/character/",
+            type: 'GET',
+            dataType: 'json',
+            success: function(res) {
+               $('#result').html(res)
+            }
+        });
+
+})
+
+</script>
